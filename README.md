@@ -33,3 +33,24 @@ studentGrade = 100;
 console.log("Student Grade: " + studentGrade); // if variable created with any, can store any datatype 
 ```
 
+## 2. Functions 
+```
+/* functions: function is a block of code that can be executed again and again */ 
+
+//1. General function in JS 
+// rules: have to sepcify the datatype of the parameters ,also return type(optional)
+function add(num1:number, num2:number):number{ 
+    return num1+num2;
+}
+console.log("Sum Calculated in Gen function: " + add(5,9));
+
+//2. Arrow function: function defined using the arrow 
+const addArrow = (num1:number, num2:number):number => num1+num2; // if you add brances you have to add the return key word 
+console.log("Sum Calculated in arrow function: " + addArrow(4,5));
+
+//3. Anonymous function: function without name 
+const addAnonymous = function(num1:number, num2:number):number {
+    return num1+num2;
+}
+console.log("Sum Calculated in Anonymous function: " + addAnonymous(14,5)); 
+```
