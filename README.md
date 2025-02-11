@@ -1,6 +1,17 @@
 ## TypeScript-Basics
+1. [Variables and Datatypes](#1-variables-and-datatypes)  
+2. [Functions](#2-functions)  
+3. [Parameters](#3-parameters)  
+4. [Class](#4-class)  
+5. [Objects](#5-objects)  
+6. [This Keyword](#6-this-keyword)  
+7. [Super Keyword](#7-super-keyword)  
+8. [Extends Keyword](#8-extends-keyword)  
+9. [Getters and Setters](#9-getters-and-setters)  
+10. [Static Methods](#10-static-methods)
 
-## 1. Variables & Datatypes 
+
+## 1. Variables and Datatypes
 ```
 /* Data types in JavaScript: primitives[number, string, boolean], array */ 
 // TypeScript: Main advantage over javascript is type safety 
@@ -33,7 +44,7 @@ studentGrade = 100;
 console.log("Student Grade: " + studentGrade); // if variable created with any, can store any datatype 
 ```
 
-## 2. Functions 
+## 2. Functions
 ```
 /* functions: function is a block of code that can be executed again and again */ 
 
@@ -54,7 +65,7 @@ const addAnonymous = function(num1:number, num2:number):number {
 }
 console.log("Sum Calculated in Anonymous function: " + addAnonymous(14,5)); 
 ```
-## 3. Parameter types in Type script
+## 3. Parameters
 ```
 /* Different types of parameters 
 1. optional parameter 
@@ -82,4 +93,83 @@ console.log("Sum of 3 numbers(12,3,5): " + sumOfThree(12,3,5));
 
 console.log("Sum of 2,3,4,5,6,7 is: "+ sumOfN(2,3,4,5,6,7));
 
+```
+## 4. Class
+```
+class Employee {
+    public empId!:number; // '!' is kept to ignore the warning of initialisation
+    private empName!:string;
+    protected empNumber!:string;
+
+    // constructors 
+    public constructor(empId:number, empName:string, empNumber:string){
+        this.empId = empId;
+        this.empName = empName;
+        this.empNumber = empNumber;
+    }
+
+    // print the informations about the employees
+    public getInformation(){
+        return `${this.empId}  ${this.empName} ${this.empNumber}`;
+    }
+
+    // getter and setters method: for the private attribute
+    get employeeName():string {
+        return this.empName;
+    }
+    set employeeName(empName:string){
+        this.empName = empName;
+    }
+}
+
+```
+## 5. Objects
+```
+// creating a object for the employee 
+let emp1 = new Employee(101, "Vaishnav Krishna P", "+91 9744065221");
+let mgr1 = new Manager("Madhu", 102, "Vaishnav", "+91 972635473");
+```
+## 6. This Keyword
+```
+// constructors 
+    public constructor(empId:number, empName:string, empNumber:string){
+        this.empId = empId;
+        this.empName = empName;
+        this.empNumber = empNumber;
+    }
+```
+## 7. Super Keyword
+```
+public constructor(mgrName:string, empId:number, empName:string, empNumber:string){
+        super(empId, empName, empNumber)
+        this.managerName = mgrName;
+    }
+```
+## 8. Extends Keyword
+```
+class Manager extends Employee{
+    public managerName!:string;
+
+    public constructor(mgrName:string, empId:number, empName:string, empNumber:string){
+        super(empId, empName, empNumber)
+        this.managerName = mgrName;
+    }
+}
+```
+## 9. Getters and Setters
+```
+// getter and setters method: for the private attribute
+    get employeeName():string {
+        return this.empName;
+    }
+    set employeeName(empName:string){
+        this.empName = empName;
+    }
+```
+## 10. Static Methods
+```
+// static method 
+    public static getCompanyName():string{
+        return this.company;
+    }
 ```
